@@ -1,0 +1,55 @@
+header {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+
+  > * {
+    z-index: 3;
+  }
+
+  .navBar {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .navMenu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+
+      li {
+        list-style: none;
+
+        a {
+          color: $primaryColor;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        .navLink {
+          transition: 0.7s ease;
+
+          &:hover {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+    .burgerMenu {
+      display: none;
+      cursor: pointer;
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: $primaryColor;
+      }
+    }
+  }
+}

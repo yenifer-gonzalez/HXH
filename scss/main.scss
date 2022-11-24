@@ -1,0 +1,18 @@
+/* UTILITIES & BASE */
+
+@import "utilities/variables";
+@import "base/resets";
+@import "utilities/mixins";
+
+/* LAYOUT */
+
+@import "layout/footer";
+@import "layout/header";
+
+/* PAGES */
+
+@import "pages/home";
+
+/* MEDIA QUERIES */
+
+@import "layout/mediaqueries";

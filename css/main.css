@@ -1,0 +1,185 @@
+/* UTILITIES & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  z-index: 1;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: 400 20px/1 "Maven Pro", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s; }
+
+.arrow:hover {
+  opacity: 0.5; }
+
+.arrow {
+  padding-top: 60px; }
+
+.arrow span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box; }
+
+.arrowUp {
+  position: absolute;
+  top: 140px;
+  right: 95px;
+  z-index: 1;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: 400 20px/1 "Maven Pro", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s; }
+
+.arrowUp:hover {
+  opacity: 0.5; }
+
+.arrowUp {
+  padding-top: 40px; }
+
+.arrowUp span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-225deg);
+  box-sizing: border-box; }
+
+/* LAYOUT */
+header {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3; }
+  header > * {
+    z-index: 3; }
+  header .navBar {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    header .navBar .navMenu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px; }
+      header .navBar .navMenu li {
+        list-style: none; }
+        header .navBar .navMenu li a {
+          color: #feae53;
+          text-decoration: none;
+          font-size: 17px; }
+        header .navBar .navMenu li .navLink {
+          transition: 0.7s ease; }
+          header .navBar .navMenu li .navLink:hover {
+            color: #006f43; }
+    header .navBar .burgerMenu {
+      display: none;
+      cursor: pointer; }
+      header .navBar .burgerMenu .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: #feae53; }
+
+/* PAGES */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  padding: 60px;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  scroll-snap-align: center; }
+  section > * {
+    position: relative;
+    z-index: 2; }
+  section#home {
+    background: url(../assets/backgroundHome.jpg) no-repeat center center/cover; }
+  section:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); }
+
+.homeWrapper {
+  color: white; }
+  .homeWrapper p {
+    padding: 20px 10% 0 10%; }
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  /* HEADER */
+  header .navBar {
+    justify-content: flex-end;
+    padding-right: 20px; }
+    header .navBar .navMenu {
+      position: fixed;
+      left: -100%;
+      top: 60px;
+      gap: 0;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      text-align: center;
+      transition: 0.3s; }
+      header .navBar .navMenu.active {
+        left: 0; }
+      header .navBar .navMenu .navItem {
+        margin: 16px 0; }
+    header .navBar .burgerMenu {
+      display: block; }
+      header .navBar .burgerMenu.active .bar:nth-child(2) {
+        opacity: 0; }
+      header .navBar .burgerMenu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); }
+      header .navBar .burgerMenu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); }
+  /* HEADER */ }
